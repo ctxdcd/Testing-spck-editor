@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turkish Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="header">
+            <div class="app-icon">A</div>
+            <div>
+                <h1>Autodidak</h1>
+                <p>Turkish Vocabulary</p>
+            </div>
+        </header>
+
+        <section class="quiz-card">
+            <div class="quiz-top">
+                <span class="badge">VOCABULARY</span>
+                <span class="question-count">01 / 01</span>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+
+            <p class="question-label">Choose the correct answer</p>
+
+            <h2>What is "bread" in Turkish?</h2>
+
+            <p class="subtitle">
+                Select the correct Turkish word.
+            </p>
+
+            <div class="options">
+                <button class="option" data-answer="A">
+                    <span class="letter">A</span>
+                    <span class="word">Süt</span>
+                    <span class="indicator"></span>
+                </button>
+
+                <button class="option" data-answer="B">
+                    <span class="letter">B</span>
+                    <span class="word">Ekmek</span>
+                    <span class="indicator"></span>
+                </button>
+
+                <button class="option" data-answer="C">
+                    <span class="letter">C</span>
+                    <span class="word">Elma</span>
+                    <span class="indicator"></span>
+                </button>
+
+                <button class="option" data-answer="D">
+                    <span class="letter">D</span>
+                    <span class="word">Su</span>
+                    <span class="indicator"></span>
+                </button>
+            </div>
+
+            <div id="feedback" class="feedback" aria-live="polite"></div>
+
+            <button id="resetButton" class="reset-button" hidden>
+                Try Again
+            </button>
+        </section>
+
+        <footer>
+            <span>REPEAT.</span>
+            <span>RECALL.</span>
+            <span>REMEMBER.</span>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

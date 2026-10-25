@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #007AFF;
+    --background: #F2F2F7;
+    --text: #1C1C1E;
+    --secondary: #8E8E93;
+    --green: #34C759;
+    --red: #FF3B30;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 28px 18px;
+}
+
+.app {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.app-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--blue);
+    color: white;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+    font-weight: 700;
+    box-shadow: 0 5px 12px #007aff30;
+}
+
+.header h1 {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.header p {
+    font-size: 13px;
+    color: var(--secondary);
+    margin-top: 3px;
+}
+
+.quiz-card {
+    background: white;
+    border-radius: 26px;
+    padding: 25px 20px;
+    box-shadow: 0 8px 30px #00000008;
+}
+
+.quiz-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--blue);
+    background: #007aff12;
+    padding: 7px 10px;
+    border-radius: 8px;
+    letter-spacing: 0.8px;
+}
+
+.question-count {
+    font-size: 12px;
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.progress-bar {
+    height: 5px;
+    background: #E5E5EA;
+    border-radius: 10px;
+    margin: 22px 0 30px;
+    overflow: hidden;
+}
+
+.progress {
+    width: 100%;
+    height: 100%;
+    background: var(--blue);
+    border-radius: 10px;
+}
+
+.question-label {
+    color: var(--secondary);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 27px;
+    line-height: 1.25;
+    letter-spacing: -0.8px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: var(--secondary);
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 15px 14px;
+    border: 1.5px solid #E5E5EA;
+    background: white;
+    border-radius: 16px;
+    text-align: left;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.option:active {
+    transform: scale(0.98);
+}
+
+.letter {
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: #F2F2F7;
+    color: #636366;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.word {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.indicator {
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid #D1D1D6;
+    border-radius: 50%;
+}
+
+.option.correct {
+    border-color: var(--green);
+    background: #34c7590d;
+}
+
+.option.correct .letter {
+    background: var(--green);
+    color: white;
+}
+
+.option.correct .indicator {
+    background: var(--green);
+    border-color: var(--green);
+}
+
+.option.correct .indicator::after {
+    content: "✓";
+    display: block;
+    color: white;
+    font-size: 13px;
+    text-align: center;
+    line-height: 18px;
+}
+
+.option.wrong {
+    border-color: var(--red);
+    background: #ff3b300a;
+}
+
+.option.wrong .letter {
+    background: var(--red);
+    color: white;
+}
+
+.option:disabled {
+    cursor: default;
+}
+
+.feedback {
+    display: none;
+    margin-top: 22px;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.feedback.show {
+    display: block;
+    animation: appear 0.25s ease;
+}
+
+.feedback.success {
+    background: #34c75912;
+    color: #248A3D;
+}
+
+.feedback.error {
+    background: #ff3b3010;
+    color: #D70015;
+}
+
+.reset-button {
+    width: 100%;
+    margin-top: 15px;
+    border: none;
+    border-radius: 14px;
+    background: var(--blue);
+    color: white;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.reset-button[hidden] {
+    display: none;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 28px;
+    color: var(--secondary);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
