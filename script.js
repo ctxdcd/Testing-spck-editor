@@ -53,4 +53,4 @@ resetButton.addEventListener("click", () => {
     feedback.textContent = "";
 
     resetButton.hidden = true;
-});   
+});
